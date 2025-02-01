@@ -114,7 +114,8 @@
             gallery.appendChild(col);
             images.push(img);
         }
-
+        const toggleButton = document.getElementById('toggle-button');
+        const body = document.body;
         const modalImage = document.getElementById('modalImage');
         const modal = new bootstrap.Modal(document.getElementById('imageModal'));
         let currentIndex = 0;
@@ -138,9 +139,7 @@
         });
 
         // script.js
-        const toggleButton = document.getElementById('toggle-button');
-        const body = document.body;
-
+        
         toggleButton.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             body.classList.toggle('light-mode');
@@ -152,7 +151,12 @@
         } else {
             body.classList.add('light-mode');
         }
+
+        // Block de Inpessão da pagina
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
     </script>
+    
 </body>
 
 </html>
